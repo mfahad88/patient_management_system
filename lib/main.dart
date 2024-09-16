@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patient_management_system/screens/dashboard_screen.dart';
+import 'package:patient_management_system/screens/home_screen.dart';
 import 'package:patient_management_system/screens/login_screen.dart';
 
 void main() {

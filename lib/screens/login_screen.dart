@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:patient_management_system/screens/dashboard_screen.dart';
+import 'package:patient_management_system/screens/home_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -74,27 +74,9 @@ class LoginScreen extends StatelessWidget {
               child: constraints.maxWidth>850?Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 mainAxisSize: MainAxisSize.max,
-                children: [
-                  const Text("Forgot Password? "),
-
-                  FilledButton(onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => const DashboardScreen(),)),style: FilledButton.styleFrom(
-                      backgroundColor: Colors.grey.shade700,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0)
-                      )
-                  ), child: const Text("Login"),)
-                ],
+                children: _getChildren(context),
               ):Column(
-                children: [
-                  const Text("Forgot Password? "),
-
-                  FilledButton(onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => const DashboardScreen(),)),style: FilledButton.styleFrom(
-                      backgroundColor: Colors.grey.shade700,
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(5.0)
-                      )
-                  ), child: const Text("Login"),)
-                ],
+                children:_getChildren(context),
               ),
             )
 
@@ -103,5 +85,18 @@ class LoginScreen extends StatelessWidget {
         );
       },),
     );
+  }
+
+  List<Widget> _getChildren(BuildContext context){
+    return [
+      const Text("Forgot Password? "),
+
+      FilledButton(onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context) => const HomeScreen(),)),style: FilledButton.styleFrom(
+          backgroundColor: Colors.grey.shade700,
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5.0)
+          )
+      ), child: const Text("Login"),)
+    ];
   }
 }
