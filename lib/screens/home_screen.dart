@@ -18,13 +18,15 @@ class HomeScreen extends StatelessWidget {
               height: constraints.maxHeight,
               color: Colors.grey.shade100,
               child: ListView(
-                padding: EdgeInsets.symmetric(vertical: 40.0),
-                children: [
+                padding: const EdgeInsets.symmetric(vertical: 40.0),
+                children: const [
                   ListTile(title: Text("Dashboard"),),
                   ListTile(title: Text("Appointments"),),
                   ListTile(title: Text("Patients"),),
                   ListTile(title: Text("Billing"),),
-                  ListTile(title: Text("Settings"),)
+                  ListTile(title: Text("Reports"),),
+                  ListTile(title: Text("Settings"),),
+                  ListTile(title: Text("Logout"),),
                 ],
               ),
             ),
@@ -32,7 +34,7 @@ class HomeScreen extends StatelessWidget {
               initialRoute: '/dashboard',
               onGenerateRoute: (settings) {
                 if(settings.name=='/dashboard'){
-                  return MaterialPageRoute(builder: (context) => DashboardScreen(),);
+                  return MaterialPageRoute(builder: (context) => const DashboardScreen(),);
                 }
               },
             )
