@@ -6,12 +6,16 @@ class PatientScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      children: [
-        SizedBox(height: 20.0,),
-        AddPatient()
-      ],
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            SizedBox(height: 20.0,),
+            AddPatient()
+          ],
+        ),
+      ),
     );
   }
 }
