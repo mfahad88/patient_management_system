@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:patient_management_system/screens/dashboard_screen.dart';
-import 'package:patient_management_system/screens/patient/patient_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
