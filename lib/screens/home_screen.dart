@@ -22,9 +22,10 @@ class HomeScreen extends StatelessWidget {
                 color: Colors.grey.shade100,
                 child: ListView(
                   padding: const EdgeInsets.symmetric(vertical: 40.0),
+
                   children:  [
-                    ListTile(title: Text("Dashboard"),onTap: () => Navigator.of(context).pushNamed('/dashboard'),),
-                    const ListTile(title: Text("Appointments"),),
+                    ListTile(title: const Text("Dashboard"),onTap: () => provider.mainNavigation.currentState!.pushReplacementNamed('/dashboard'),),
+                    ListTile(title: const Text("Appointments"),),
                     ListTile(title: const Text("Patients"),onTap: () => provider.mainNavigation.currentState!.pushReplacementNamed('/patient'),),
                     const ListTile(title: Text("Billing"),),
                     const ListTile(title: Text("Reports"),),
