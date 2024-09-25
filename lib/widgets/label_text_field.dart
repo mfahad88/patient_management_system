@@ -5,7 +5,9 @@ class LabelTextField extends StatelessWidget {
   final ValueChanged<String>? onChanged;
   final double width;
   final TextInputType keyboardType;
-  const LabelTextField({super.key,required this.label,required this.width,required this.keyboardType,required this.onChanged});
+  final TextInputAction textInputAction;
+  final TextEditingController? controller;
+  const LabelTextField({super.key,required this.label,required this.width,required this.keyboardType,required this.onChanged,required this.textInputAction,this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -16,8 +18,10 @@ class LabelTextField extends StatelessWidget {
         SizedBox(
           width: width,
           child: TextField(
+            controller: controller,
             keyboardType: keyboardType,
-
+            maxLines: 1,
+            textInputAction: textInputAction,
             decoration: InputDecoration(
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(5.0),

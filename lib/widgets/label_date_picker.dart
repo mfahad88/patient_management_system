@@ -4,8 +4,9 @@ class LabelDatePicker extends StatelessWidget {
   final String label;
   final ValueChanged<String>? onChanged;
   final double width;
+  final TextInputAction textInputAction;
   final TextEditingController _controller = TextEditingController();
-  LabelDatePicker({super.key,required this.label,required this.onChanged,required this.width});
+  LabelDatePicker({super.key,required this.label,required this.onChanged,required this.width, required this.textInputAction});
 
   @override
   Widget build(BuildContext context) {
@@ -17,6 +18,7 @@ class LabelDatePicker extends StatelessWidget {
         SizedBox(
           width: width,
           child: TextField(
+            textInputAction: textInputAction,
             controller: _controller,
             decoration: InputDecoration(
                 border: OutlineInputBorder(
@@ -27,7 +29,9 @@ class LabelDatePicker extends StatelessWidget {
                     )
                 )
             ),
-            onChanged: onChanged,
+            onChanged: (value) {
+              onChanged!(value);
+            },
             onTap: () {
             _selectDate(context);
             },

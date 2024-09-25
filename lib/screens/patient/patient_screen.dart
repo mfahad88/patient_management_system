@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:patient_management_system/screens/patient/add_patient.dart';
+import 'package:patient_management_system/screens/patient/patient_list.dart';
 
 class PatientScreen extends StatelessWidget {
   const PatientScreen({super.key});
@@ -12,7 +13,8 @@ class PatientScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
             SizedBox(height: 20.0,),
-            AddPatient()
+            AddPatient(),
+            PatientList()
           ],
         ),
       ),
