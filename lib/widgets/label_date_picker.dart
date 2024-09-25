@@ -50,8 +50,8 @@ class LabelDatePicker extends StatelessWidget {
       lastDate: DateTime(DateTime.now().year), // Latest date allowed
     );
     if (picked != null ) {
-        onChanged!('${picked.day}/${picked.month < 10 ?'0${picked.month}':picked.month}/${picked.year}');
-        _controller.text = '${picked.day}/${picked.month < 10 ?'0${picked.month}':picked.month}/${picked.year}';
+        onChanged!('${picked.day < 10 ?'0${picked.day}':picked.day}/${picked.month < 10 ?'0${picked.month}':picked.month}/${picked.year}');
+        _controller.text = '${picked.day < 10 ?'0${picked.day}':picked.day}/${picked.month < 10 ?'0${picked.month}':picked.month}/${picked.year}';
     }
   }
 }

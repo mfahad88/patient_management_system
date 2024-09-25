@@ -12,9 +12,15 @@ class PatientScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            SizedBox(height: 20.0,),
             AddPatient(),
-            PatientList()
+            Row(
+              children: [
+                PatientList(),
+                PatientList(),
+              ],
+            ),
+
+
           ],
         ),
       ),

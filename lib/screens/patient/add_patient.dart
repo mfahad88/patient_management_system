@@ -15,6 +15,7 @@ class AddPatient extends StatelessWidget {
     Patient patient=Patient();
     TextEditingController _controllerName = TextEditingController();
     TextEditingController _controllerContactNo = TextEditingController();
+
     return Row(
       children: [
         LabelTextField(label: 'Name',width: 200,keyboardType: TextInputType.name, onChanged: (value) => patient.name=value,textInputAction: TextInputAction.next, controller: _controllerName,),
